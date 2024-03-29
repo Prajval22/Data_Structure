@@ -14,7 +14,7 @@ public class Main {
         Node.print(head);
         // head = Node.erase(70,head);
         // System.out.print(Node.binarySeach(-5, head));
-        Node.quickSort(head);
+        head = Node.reverse(head);
         Node.print(head);
     }
 }
