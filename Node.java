@@ -205,4 +205,33 @@ public class Node {
         return merge(left, right);
     }
 
+    public static Node findPivot(Node head){
+        int x = head.data;
+        Node p = head.next;
+        Node q = head;
+        while(p!=null){
+            if(p.data<x){
+                q = q.next;
+                int temp = q.data;
+                q.data = p.data;
+                p.data = temp;
+            }
+            p = p.next;
+        }
+        head.data = q.data;
+        q.data = x;
+        return q;
+    }
+    
+    public static Node quickSort(Node head){
+        if(head==null || head.next==null)
+            return head;
+        Node pivot = findPivot(head);
+        Node firstSorted = quickSort(pivot.next);
+        pivot.next = null;
+        Node secondSorted = quickSort(head);
+        pivot.next = firstSorted;
+        return head;
+    }
+
 }
