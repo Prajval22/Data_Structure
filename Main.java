@@ -16,5 +16,7 @@ public class Main {
         // System.out.print(Node.binarySeach(-5, head));
         head = Node.reverse(head);
         Node.print(head);
+
+        System.out.println(Node.sumOfList(head));
     }
 }

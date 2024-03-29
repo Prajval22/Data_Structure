@@ -245,4 +245,10 @@ public class Node {
         return pre;
     }
 
+    public static int sumOfList(Node head){
+        if(head==null)
+            return 0;
+        return head.data+sumOfList(head.next);
+    }
+
 }
